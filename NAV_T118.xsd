@@ -1,0 +1,878 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:common="https://soap.api.nav.gov.hu/definitions/model/2.0/common/1.0"
+        xmlns:meta="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+        xmlns:tns="https://soap.api.nav.gov.hu/definitions/model/2.0/T118/1.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        targetNamespace="https://soap.api.nav.gov.hu/definitions/model/2.0/T118/1.0">
+   <import namespace="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+           schemaLocation="form_xsd_metaschema.xsd"/>
+   <import namespace="https://soap.api.nav.gov.hu/definitions/model/2.0/common/1.0"
+           schemaLocation="common.xsd"/>
+   <element name="Doc_T118"
+            type="tns:Doc_T118_Type"
+            meta:metaType="DocMetaType">
+      <annotation>
+         <documentation>Adatlap és változásbejelentő lap a csoportos társasági adóalanyisággal kapcsolatos közös kérelem benyújtásához, illetve változásbejelentéshez</documentation>
+      </annotation>
+      <xs:unique name="uniqueFileId_Attachment_1">
+         <xs:selector xpath="Form_T118/Attachment_1"/>
+         <xs:field xpath="fileId"/>
+      </xs:unique>
+   </element>
+   <simpleType name="Enum_T118_0A0001C008A">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="U"/>
+         <enumeration value="T"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_T118_0A0001C0011BA">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="1"/>
+         <enumeration value="2"/>
+         <enumeration value="3"/>
+         <enumeration value="4"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_T118_0A0001C0008DA">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="U"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_T118_0A0001C0009BA">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="I"/>
+         <enumeration value="N"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_T118_0A0001C0009CA">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="EUR"/>
+         <enumeration value="USD"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_T118_0CXXXXC006A">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="1"/>
+         <enumeration value="2"/>
+         <enumeration value="3"/>
+         <enumeration value="4"/>
+         <enumeration value="5"/>
+      </restriction>
+   </simpleType>
+   <complexType name="Doc_T118_Type">
+      <annotation>
+         <documentation>A teljes bizonylat szerkezetet leíró típus</documentation>
+      </annotation>
+      <sequence>
+         <element name="Form_T118"
+                  type="tns:Form_T118_Type"
+                  minOccurs="1"
+                  maxOccurs="1"
+                  meta:metaType="FormMetaType">
+            <annotation>
+               <documentation>T118 részbizonylat</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="Form_T118_Type">
+      <annotation>
+         <documentation>A teljes nyomtatvány T118 részbiztonylatának szerkezetét leíró típus.</documentation>
+      </annotation>
+      <sequence>
+         <element name="Block_120001"
+                  type="tns:Block_T118_120001_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Azonosító adatok</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120002"
+                  type="tns:Block_T118_120002_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>A csoportképviselőre vonatkozó adatok, nyilatkozatok</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120003"
+                  type="tns:Block_T118_120003_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Új csoportos társasági adóalanyiság kérelmezése</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120012"
+                  type="tns:Block_T118_120012_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Jogutódlással érintett csoporttag adatai</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120016"
+                  type="tns:Block_T118_120016_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Jogutódok adatai</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120023"
+                  type="tns:Block_T118_120023_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>A csoportos társasági adóalany tagjainak csatlakozáshoz, kilépéshez, engedély visszavonásához kapcsolódó adatok, nyilatkozatok</documentation>
+            </annotation>
+         </element>
+         <element name="Attachment_1"
+                  type="common:AttachmentType"
+                  minOccurs="0"
+                  maxOccurs="unbounded"
+                  meta:metaType="AttachmentMetaType">
+            <annotation>
+               <documentation>T118 csatolmány; File Extensions:PDF;ZIP;RAR;ARJ;ACE;GZIP;TAR;CAB;BMP;JPG;JPEG;GIF;TIF;PNG</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="Block_T118_120001_Type">
+      <annotation>
+         <documentation>Azonosító adatok</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120004"
+                  type="tns:FieldGroup_T118_120004_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Csoportazonosító</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120005"
+                  type="tns:FieldGroup_T118_120005_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Benyújtás indoka</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_T118_120002_Type">
+      <annotation>
+         <documentation>A csoportképviselőre vonatkozó adatok, nyilatkozatok</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120006"
+                  type="tns:FieldGroup_T118_120006_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Csoporttagok által kijelölt csoportképviselő adatai</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120008"
+                  type="tns:FieldGroup_T118_120008_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Csoporttagok által kijelölt új csoportképviselő adatai</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_T118_120003_Type">
+      <annotation>
+         <documentation>Új csoportos társasági adóalanyiság kérelmezése</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120009"
+                  type="tns:FieldGroup_T118_120009_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Új csoportos társasági adóalanyiság kérelmezése</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120010"
+                  type="tns:FieldGroup_T118_120010_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Pénzforgalmi számlaszám megadása vagy módosítása</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120011"
+                  type="tns:FieldGroup_T118_120011_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Adóelőleg devizában történő megfizetése</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_T118_120012_Type">
+      <annotation>
+         <documentation>Jogutódlással érintett csoporttag adatai</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120013"
+                  type="tns:FieldGroup_T118_120013_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Jogutódlással érintett csoporttag adatai</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120014"
+                  type="tns:FieldGroup_T118_120014_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>A csoport létrehozását engedélyező határozat visszavonása</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120015"
+                  type="tns:FieldGroup_T118_120015_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Az adatlapot benyújtó ügyintéző neve és telefonszáma</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_T118_120016_Type">
+      <annotation>
+         <documentation>Jogutódok adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Chain_120026"
+                  type="tns:Chain_T118_120026_Type"
+                  minOccurs="0"
+                  meta:metaType="ChainMetaType">
+            <annotation>
+               <documentation>Jogutódok adatai</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_T118_120023_Type">
+      <annotation>
+         <documentation>A csoportos társasági adóalany tagjainak csatlakozáshoz, kilépéshez, engedély visszavonásához kapcsolódó adatok, nyilatkozatok</documentation>
+      </annotation>
+      <all>
+         <element name="Chain_120036"
+                  type="tns:Chain_T118_120036_Type"
+                  minOccurs="0"
+                  meta:metaType="ChainMetaType">
+            <annotation>
+               <documentation>Csoportos társasági adóalany nyilatkozatai és adatai</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Chain_T118_120026_Type">
+      <annotation>
+         <documentation>Jogutódok adatai</documentation>
+      </annotation>
+      <sequence>
+         <element name="Chain_elem" minOccurs="0" maxOccurs="59994">
+            <annotation>
+               <documentation>Lánc ismétlődő elemei</documentation>
+            </annotation>
+            <complexType>
+               <sequence>
+                  <element name="FieldGroup_120017"
+                           type="tns:FieldGroup_T118_120017_Type"
+                           minOccurs="1"
+                           meta:metaType="FieldGroupMetaType">
+                     <annotation>
+                        <documentation>Jogutódok adatai</documentation>
+                     </annotation>
+                  </element>
+               </sequence>
+            </complexType>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="Chain_T118_120036_Type">
+      <annotation>
+         <documentation>Csoportos társasági adóalany nyilatkozatai és adatai</documentation>
+      </annotation>
+      <sequence>
+         <element name="Chain_elem" minOccurs="0" maxOccurs="9999">
+            <annotation>
+               <documentation>Lánc ismétlődő elemei</documentation>
+            </annotation>
+            <complexType>
+               <sequence>
+                  <element name="FieldGroup_120024"
+                           type="tns:FieldGroup_T118_120024_Type"
+                           minOccurs="1"
+                           meta:metaType="FieldGroupMetaType">
+                     <annotation>
+                        <documentation>Csoportos társasági adóalany nyilatkozatai és adatai</documentation>
+                     </annotation>
+                  </element>
+               </sequence>
+            </complexType>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="FieldGroup_T118_120004_Type">
+      <annotation>
+         <documentation>Csoportazonosító</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Csoportazonosító szám (csoportazonosító)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_T118_120005_Type">
+      <annotation>
+         <documentation>Benyújtás indoka</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C003A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Új kérelem (indok_újkérelem)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C005A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A csoportos társasági adóalany tagjainak csatlakozáshoz, kilépéshez, engedély visszavonásához kapcsolódó adatok, nyilatkozatok (indok_28pótlap)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C002A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Csoportképviselő személyében bekövetkezett változás (indok_képviselőváltozás)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C004A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Új pénzforgalmi számlaszám bejelentése (indok_újszámlaszám)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C006A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Devizában fizetéssel kapcsolatos bejelentés (indok_devizában_fizetés)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_T118_120006_Type">
+      <annotation>
+         <documentation>Csoporttagok által kijelölt csoportképviselő adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C008A"
+                  minOccurs="0"
+                  type="tns:Enum_T118_0A0001C008A"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Új csoportos társasági adóalany létrehozására és csoportazonosító szám megállapítását kérem/a csoportképviselő törlését kérem (UT)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C0004BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A csoportképviselő teljes neve (elnevezése) ([T118]B4)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="200"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0004CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adószáma ([T118]C4)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0004EA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A csoporttagok képviseletét vállalom ([T118]E4)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C0004FA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A csoporttagok képviseletét nem vállalom ([T118]F4)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_T118_120008_Type">
+      <annotation>
+         <documentation>Csoporttagok által kijelölt új csoportképviselő adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C0005AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A csoportképviselő teljes neve (elnevezése) ([T118]A5)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="200"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0005BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adószáma ([T118]B5)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0005CA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A csoporttagok képviseletét vállalom ([T118]C5)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C0006AA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A csoportképviselő személyében bekövetkezett változás időpontja ([T118]A6)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_T118_120009_Type">
+      <annotation>
+         <documentation>Új csoportos társasági adóalanyiság kérelmezése</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C0007AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Kérem a csoportos társasági adóalany létrehozásának engedélyezését és a csoportazonosító szám megállapítását ([T118]A7)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C009A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jelen nyomtatványban megjelölt adózók meghatalmazzuk (név vagy meghatalmazott jogcíme (pl. ügyvéd, adótanácsadó stb.)), hogy a csoportos társasági adóalanyiság engedélyezéssel kapcsolatosan az adóhatóság előtt helyettünk és nevünkben teljes jogkörrel eljárjon (meghatalmazott_neve)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="200"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C010A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A nevezett a meghatalmazást elfogadja (felhatalmazás)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_T118_120010_Type">
+      <annotation>
+         <documentation>Pénzforgalmi számlaszám megadása vagy módosítása</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C0008DA"
+                  minOccurs="0"
+                  type="tns:Enum_T118_0A0001C0008DA"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Új pénzforgalmi számlaszám jelölése ([T118]D8)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C0008AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A csoportos társasági adóalany pénzforgalmi számlaszáma ([T118]A8)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="24"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0008BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A számlát vezető pénzintézet neve ([T118]B8)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0008CA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Új pénzforgalmi számlaszám alkalmazásának kezdő dátuma ([T118]C8)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_T118_120011_Type">
+      <annotation>
+         <documentation>Adóelőleg devizában történő megfizetése</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C0009BA"
+                  minOccurs="0"
+                  type="tns:Enum_T118_0A0001C0009BA"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Társaságiadó-fizetési kötelezettségemnek devizában kívánok eleget tenni a bejelentést követő üzleti évem első napjától (újonnan alakuló csoport esetén a csoport megalakulásától) ([T118]B9)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C0009CA"
+                  minOccurs="0"
+                  type="tns:Enum_T118_0A0001C0009CA"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Választott devizanem ([T118]C9)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_T118_120013_Type">
+      <annotation>
+         <documentation>Jogutódlással érintett csoporttag adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C0010BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Teljes neve (elnevezése) ([T118]B10)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="200"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C0010AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adószáma ([T118]A10)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_T118_120014_Type">
+      <annotation>
+         <documentation>A csoport létrehozását engedélyező határozat visszavonása</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C0011AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Kérem a csoportos társasági adóalany létrehozását engedélyező határozat visszavonását ([T118]A11)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C0011BA"
+                  minOccurs="0"
+                  type="tns:Enum_T118_0A0001C0011BA"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Az engedély visszavonásának oka ([T118]B11)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_T118_120015_Type">
+      <annotation>
+         <documentation>Az adatlapot benyújtó ügyintéző neve és telefonszáma</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C011A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ügyintéző neve (Ügyintéző_neve)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C012A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Telefonszáma (Ügyintéző_telefonszáma)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_T118_120017_Type">
+      <annotation>
+         <documentation>Jogutódok adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0BXXXXC0001AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adószáma ([A1]A1)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0BXXXXC0001BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Elnevezése ([A1]B1)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0BXXXXC0001CA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jogutódlás hatályának dátuma ([A1]C1)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_T118_120024_Type">
+      <annotation>
+         <documentation>Csoportos társasági adóalany nyilatkozatai és adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0CXXXXC001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Csoportazonosító szám (P28_csoportazonosító)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0CXXXXC002A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Kérem a működő csoportos társasági adóalanyhoz történő csatlakozás engedélyezését (P28_1újcsoporttag)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0CXXXXC003A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Tevékenységet év közben kezdő adózóként kérem a működő csoportos társasági adóalanyhoz történő csatlakozás engedélyezését (P28_1évközben)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0CXXXXC004A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Kérem a működő csoportos társasági adóalanyhoz jogutódként történő csatlakozás engedélyezését (P28_1jogutód)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0CXXXXC005A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Kérem a csoportos társasági adóalanyból történő kilépés engedélyezését (P28_1kilép)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0CXXXXC006A"
+                  minOccurs="0"
+                  type="tns:Enum_T118_0CXXXXC006A"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A kilépés oka (P28_kilépés_oka)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0CXXXXC007A"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>A kilépés időpontja (P28_kilépés_ideje)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0CXXXXC008A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Teljes neve (elnevezése) (P28_név)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="200"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0CXXXXC009A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adószáma (P28_adószám)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0CXXXXC010A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Hozzájárulok, hogy a csoportképviselő a csoportos társasági adóalany megszüntetése iránti kérelmet nyújtson be (P28_3)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+</schema>
